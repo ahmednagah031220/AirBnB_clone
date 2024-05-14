@@ -12,3 +12,20 @@ To start the console, navigate to the project directory and run the `console.py`
 
 ```bash
 $ ./console.py
+```
+
+Upon execution, the command interpreter will display a prompt (hbnb), indicating that it is ready to accept commands.
+
+### How to Use It
+
+The command interpreter can interpret several commands to manage the application's data effectively:
+
+```bash
+$ (hbnb) create BaseModel
+```
+
+show: Displays the information of a specific instance based on its class name and id.
+
+```bash
+$ (hbnb) show BaseModel 1234-1234-1234
+```
