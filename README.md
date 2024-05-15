@@ -20,6 +20,12 @@ Upon execution, the command interpreter will display a prompt (hbnb), indicating
 
 The command interpreter can interpret several commands to manage the application's data effectively:
 
+create: Creates a new instance of a specified class and prints the id of the new instance.
+
+```bash
+$ (hbnb) create BaseModel
+```
+
 ```bash
 $ (hbnb) create BaseModel
 ```
