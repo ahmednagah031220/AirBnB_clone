@@ -26,10 +26,6 @@ create: Creates a new instance of a specified class and prints the id of the ne
 $ (hbnb) create BaseModel
 ```
 
-```bash
-$ (hbnb) create BaseModel
-```
-
 show: Displays the information of a specific instance based on its class name and id.
 
 ```bash
