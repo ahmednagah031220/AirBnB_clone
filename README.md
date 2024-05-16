@@ -45,4 +45,18 @@ Below are some examples of how to use the command interpreter:
 Creating a new instance of BaseModel:
 $ (hbnb) create BaseModel
 $ 1234-1234-1234-1234
+
+Showing an instance of BaseModel by id:
+$ (hbnb) show BaseModel 1234-1234-1234-1234
+$ [BaseModel] (1234-1234-1234-1234) {'id': '1234-1234-1234-1234', 'created_at': datetime, 'updated_at': datetime}
+
+Deleting an instance of BaseModel:
+$ (hbnb) destroy BaseModel 1234-1234-1234-1234
+
+Displaying all instances of BaseModel:
+$ (hbnb) all BaseModel
+$ ["[BaseModel] (1234-1234-1234-1234) {'id': '1234-1234-1234-1234', 'created_at': datetime, 'updated_at': datetime}"]
+
+Updating an instance of BaseModel:
+$ (hbnb) update BaseModel 1234-1234-1234-1234 email "example@example.com"
 ```
