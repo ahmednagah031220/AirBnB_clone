@@ -20,33 +20,20 @@ Upon execution, the command interpreter will display a prompt (hbnb), indicating
 
 The command interpreter can interpret several commands to manage the application's data effectively:
 
-create: Creates a new instance of a specified class and prints the id of the new instance.
-
 ```bash
+create: Creates a new instance of a specified class and prints the id of the new instance.
 $ (hbnb) create BaseModel
-```
 
 show: Displays the information of a specific instance based on its class name and id.
-
-```bash
 $ (hbnb) show BaseModel 1234-1234-1234
-```
 
 destroy: Deletes a specified instance based on its class name and id.
-
-```bash
 $ (hbnb) destroy BaseModel 1234-1234-1234
-```
 
 all: Displays all instances of a class or all instances of every class if no class name is specified.
-
-```bash
 $ (hbnb) all BaseModel
-```
 
 update: Updates an instance based on its class name and id by adding or updating attributes.
-
-```bash
 $ (hbnb) update BaseModel 1234-1234-1234 email "aibnb@holberton.com"
 ```
 
