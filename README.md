@@ -31,3 +31,31 @@ show: Displays the information of a specific instance based on its class name an
 ```bash
 $ (hbnb) show BaseModel 1234-1234-1234
 ```
+
+destroy: Deletes a specified instance based on its class name and id.
+
+```bash
+$ (hbnb) destroy BaseModel 1234-1234-1234
+```
+
+all: Displays all instances of a class or all instances of every class if no class name is specified.
+
+```bash
+$ (hbnb) all BaseModel
+```
+
+update: Updates an instance based on its class name and id by adding or updating attributes.
+
+```bash
+$ (hbnb) update BaseModel 1234-1234-1234 email "aibnb@holberton.com"
+```
+
+### Examples
+
+Below are some examples of how to use the command interpreter:
+
+```bash
+Creating a new instance of BaseModel:
+$ (hbnb) create BaseModel
+$ 1234-1234-1234-1234
+```
