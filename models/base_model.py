@@ -15,8 +15,9 @@ class BaseModel:
             dictionary_mod = self.__dict__
             for item, result in kwargs.items():
                 if item == "created_at" or item == "updated_at":
-                    dictionary_mod[item] = datetime.strptime(kwargs[item],
-                                                  "%Y-%m-%dT%H:%M:%S.%f")
+                    value = datetime.strptime(kwargs[item],
+                                              "%Y-%m-%dT%H:%M:%S.%f")
+                    dictionary_mod[item] = value
                 else:
                     dictionary_mod[item] = result
         else:
@@ -37,7 +38,7 @@ class BaseModel:
 
     def __str__(self):
         """returns string defining class"""
-        return "[{}] ({}) {}".format(self.__class__.__name__,
-                                     self.id,
-                                     dict(self.__dict__))
-
+        re_value = "[{}] ({}) {}".format(self.__class__.__name__,
+                                         self.id,
+                                         dict(self.__dict__))
+        return re_value
