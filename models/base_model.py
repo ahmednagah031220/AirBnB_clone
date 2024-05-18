@@ -1,30 +1,35 @@
 #!/usr/bin/python3
-"""Base Model for AirBnB project console"""
-from datetime import datetime
+"""Base Model for AirBnB project"""
 import models
 import uuid
+from datetime import datetime
 
 
 class BaseModel:
-    """BaseModel class instances with methods"""
+    """BaseModel class instances and methods"""
     def __init__(self, *args, **kwargs):
-        self.id = str(uuid.uuid4())
-        self.updated_at = datetime.now()
-        self.created_at = datetime.now()
         if kwargs:
             dictionary_mod = self.__dict__
-            for item, result in kwargs.items():
-                if item == "created_at" or item == "updated_at":
-                    value = datetime.strptime(kwargs[item],
-                                              "%Y-%m-%dT%H:%M:%S.%f")
-                    dictionary_mod[item] = value
-                else:
-                    dictionary_mod[item] = result
+            for key, value in kwargs.items():
+                if key == "created_at" or key == "updated_at":
+                    time_form = datetime.strptime(kwargs[key],
+                                                  "%Y-%m-%dT%H:%M:%S.%f")
+                    dictionary_mod[key] = time_form
+                elif key != "__class__":
+                    dictionary_mod[key] = value
         else:
+            self.id = str(uuid.uuid4())
+            self.created_at = datetime.now()
+            self.updated_at = datetime.now()
             models.storage.new(self)
 
+    def __str__(self):
+        """returning a string defining the class"""
+        return "[{}] ({}) {}".format(self.__class__.__name__,
+                                     self.id, dict(self.__dict__))
+
     def to_dict(self):
-        """returns dict contains variables and class name"""
+        """To return a dict containing all the variables and class name"""
         instance_dict = self.__dict__.copy()
         instance_dict["__class__"] = self.__class__.__name__
         instance_dict["created_at"] = self.created_at.isoformat()
@@ -35,10 +40,3 @@ class BaseModel:
         """Save the file"""
         self.updated_at = datetime.now()
         models.storage.save()
-
-    def __str__(self):
-        """returns string defining class"""
-        re_value = "[{}] ({}) {}".format(self.__class__.__name__,
-                                         self.id,
-                                         dict(self.__dict__))
-        return re_value

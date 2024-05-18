@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """Console of the Project"""
-import sys
 import cmd
 import re
 import shlex
+import sys
 from models import storage
 from models.base_model import BaseModel
 
